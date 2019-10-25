@@ -1,0 +1,35 @@
+server:
+  port: 8100
+spring:
+  application:
+    name: springcloudstreamsnotifier
+
+  cloud:
+    stream:
+      bindings:      
+        input:
+          #group: earliest                    
+          destination: shop          
+        output:
+          destination: shop2
+          producer:
+            header-mode: none
+        hello:
+          destination: hello
+          producer:
+            header-mode: none
+
+      
+      #kafka:
+      #  streams:
+      #    binder:
+      #      configuration:
+      #        commit.interval.mms: 1000
+      #        default.key.serde: org.kafka.common.serialization.Serdes$UUIDSerde
+      #        default.value.serde: org.kafka.common.serialization.Serdes$StringSerde
+
+
+chat:
+  url: https://chat.googleapis.com/v1/spaces/AAAApphsEIY/messages
+  key: AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI
+  token: G8WLQx1ufmBvknZFufsJ5pl1W61zcrMTsebTLE3h9lQ%3D
